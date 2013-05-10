@@ -245,10 +245,13 @@ class Game:
 
     def take_screenshot(self):
         i = 1
-        filename = "sshot.tga"
+        basedir = os.environ['HOME']
+        if not basedir:
+            basedir = '/home'
+        filename = basedir + "/funnyboat-sshot.tga"
         while os.path.exists(filename):
             i += 1
-            filename = "sshot" + str(i) + ".tga"
+            filename = filename + "/funnyboat-sshot" + str(i) + ".tga"
         
         pygame.image.save(self.screen, filename)
         print "Screenshot saved as " + filename
