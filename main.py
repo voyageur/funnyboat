@@ -62,6 +62,8 @@ def main():
     pygame.display.set_icon(util.load_image("kuvake"))
     pygame.display.set_caption("Trip on the Funny Boat")
 
+    pygame.mouse.set_visible(False)
+
     init()
 
     joy = None
