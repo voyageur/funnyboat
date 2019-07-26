@@ -144,8 +144,8 @@ class Level:
         for enemy in self.phases[self.phase % len(self.phases)]:
             offset, delay = enemy
             if self.endless and delay > 0:
-                delay -= self.phase / 4 * 5
-                offset -= self.phase / 4 * 5
+                delay -= self.phase // 4 * 5
+                offset -= self.phase // 4 * 5
                 if delay <= 30:
                     delay = 30
                 if offset < 0:
@@ -158,7 +158,7 @@ class Level:
         if not self.endless:
             Water.global_water.set_amplitude(self.phase_weather[self.phase % len(self.phase_weather)])
         else:
-            Water.global_water.set_amplitude(self.phase_weather[(self.phase / 4) % len(self.phase_weather)])
+            Water.global_water.set_amplitude(self.phase_weather[(self.phase // 4) % len(self.phase_weather)])
 
 
         self.t += 1

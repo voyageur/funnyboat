@@ -29,7 +29,7 @@ class Powerup (pygame.sprite.Sprite):
         water_level = Water.global_water.get_water_level(self.rect.centerx)
         if self.fading:
             if self.fadecount > 0:
-                self.image.set_alpha(self.fadecount * 255 / 15)
+                self.image.set_alpha(self.fadecount * 255 // 15)
                 self.fadecount -= 1
             else:
                 self.picked = True

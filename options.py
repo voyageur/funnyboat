@@ -51,7 +51,7 @@ class Options:
             self.water.update()
             self.water_sprite.draw(self.screen)
 
-            for i in xrange(len(self.menu)):
+            for i in range(len(self.menu)):
                 self.render(i)
 
             cloud.update()

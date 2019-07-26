@@ -20,7 +20,7 @@ def get_config_path():
         try:
             pathname = os.environ["APPDATA"] + "/Funny Boat"
         except:
-            print "Couldn't get environment variable for home directory"
+            print("Couldn't get environment variable for home directory")
             pathname = "."
     if not os.path.exists(pathname):
         os.mkdir(pathname)
@@ -73,13 +73,13 @@ def save_config():
         os.mkdir(get_config_path())
     f = codecs.open(filename, "w", "utf_8")
 
-    print >> f, "alpha\t%s" % Variables.alpha
-    print >> f, "particles\t%s" % Variables.particles
-    print >> f, "music\t%s" % Variables.music
-    print >> f, "name\t%s" % Variables.name
-    print >> f, "sound\t%s" % Variables.sound
-    print >> f, "aa\t%s" % Variables.aa
-    print >> f, "fullscreen\t%s" % Variables.fullscreen
+    print("alpha\t%s" % Variables.alpha, file=f)
+    print("particles\t%s" % Variables.particles, file=f)
+    print("music\t%s" % Variables.music, file=f)
+    print("name\t%s" % Variables.name, file=f)
+    print("sound\t%s" % Variables.sound, file=f)
+    print("aa\t%s" % Variables.aa, file=f)
+    print("fullscreen\t%s" % Variables.fullscreen, file=f)
 
     f.close()
 
@@ -91,16 +91,16 @@ def load_image(name):
         # in case someone does, at least it won't crash the game if they don't
         # have Numeric installed
         w,h = image.get_size()
-        for i in xrange(w):
-            for j in xrange(h):
+        for i in range(w):
+            for j in range(h):
                 pixel = image.get_at((i,j))
                 if pixel[3] > 127:
                     image.set_at((i,j), (pixel[0], pixel[1], pixel[2], 255))
                 else:
                     image.set_at((i,j), (pixel[0], pixel[1], pixel[2], 0))
         #surfarray = pygame.surfarray.pixels_alpha(image)
-        #for i in xrange(len(surfarray)):
-        #    for j in xrange(len(surfarray[i])):
+        #for i in range(len(surfarray)):
+        #    for j in range(len(surfarray[i])):
         #        if surfarray[i][j] > 127:
         #            surfarray[i][j] = 255
         #        else:

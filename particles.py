@@ -40,7 +40,7 @@ class Particle (pygame.sprite.Sprite):
             self.life = 0
 
         if Variables.alpha:
-            self.image.set_alpha(self.life * 255 * self.opacity / self.initial_life)
+            self.image.set_alpha(self.life * 255 * self.opacity // self.initial_life)
 
 class Particles (pygame.sprite.Sprite):
     def __init__(self):
