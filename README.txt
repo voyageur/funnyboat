@@ -49,9 +49,6 @@ LICENSE-CODE.txt)
 The graphics, sound effects and music are provided under the MIT License.
 (see LICENSE-MEDIA.txt) 
 
-The Vera Sans font is made by Bitstream Inc. and it can't be sold by itself,
-but can otherwise be used freely. See http://www.gnome.org/fonts/ for details.
-
 The PixelPerfect collision detection library was created by John Eriksson in
 2006 and is under public domain. It can be found on mr. Eriksson's website at
 http://arainyday.se/projects/python/PixelPerfect/
