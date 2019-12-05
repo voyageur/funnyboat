@@ -83,8 +83,11 @@ def save_config():
 
     f.close()
 
+def get_filepath(name, ext):
+    return os.path.join(os.path.dirname(__file__), "data", name + ext)
+
 def load_image(name):
-    image = pygame.image.load("data/" + name + ".png").convert_alpha()
+    image = pygame.image.load(get_filepath(name, ".png")).convert_alpha()
     if not Variables.alpha:
         # this is kinda not useful. you can't even get Variables.alpha set
         # without modifying the config file by hand
@@ -109,11 +112,11 @@ def load_image(name):
     return image
 
 def load_sound(name):
-    return pygame.mixer.Sound("data/" + name + ".ogg")
+    return pygame.mixer.Sound(get_filepath(name, ".ogg"))
 
 def load_music(name):
     # The all-caps ogg is because the original file just happened to be that way
-    pygame.mixer.music.load("data/" + name + ".ogg")
+    pygame.mixer.music.load(get_filepath(name, ".ogg"))
 
 def rotate(surf, angle):
     if Variables.aa:
