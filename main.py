@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+# Seriously...
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+
 import pygame
 import math
 import random
